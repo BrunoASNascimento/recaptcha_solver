@@ -30,18 +30,34 @@ def get_text_by_audio(dirpath):
 # print(get_text_by_audio(r'C:\Users\bruno\Downloads\audio (3).mp3'))
 
 
-def test_limit_recaptcha():
+def test_limit_recaptcha(img_error_recaptcha):
     test_error = False
     while test_error == True:
         test_error = time_by_img(
-            'data/img/developer/step_recaptcha_erro.png', 1)
+            img_error_recaptcha, 1)
         if test_error == True:
             print('[ERROR] Limit recaptcha.')
             print('[BREAK CODE]')
             break
 
 
-def recaptcha_solver(back_page):
+# img_init_page = ''
+# img_activate_recaptcha = 'data\img\step_005.png'
+# img_sound = 'data\img\step_006.png'
+# img_reset_recaptcha = 'data\img\reset_recaptcha.png'
+# img_download_recaptcha = 'data\img\step_007.png'
+# img_error_recaptcha = 'data\img\step_recaptcha_erro.png'
+# img_options_sound=img_options_sound
+# img_download_sound=img_download_sound
+# img_close_sound=img_close_sound
+# imgs_text_box=['data/img/developer/step_011.png',
+#  'data/img/developer/step_011-1.png']
+# imgs_verify = ['data/img/developer/step_012.png',
+            # 'data/img/developer/step_012-1.png']
+# img_check = 'data/img/developer/step_recaptcha_ok.png'
+
+
+def recaptcha_solver(img_back_page, path_download, img_init_page, img_activate_recaptcha, img_sound, img_reset_recaptcha, img_download_recaptcha, img_error_recaptcha, img_options_sound, img_download_sound, img_close_sound, imgs_text_box, imgs_verify, img_check):
     pyautogui.moveTo(10, 10)
     pass_test = False
     control = 0
@@ -49,47 +65,45 @@ def recaptcha_solver(back_page):
         control += 1
         print('[INFO] Try to break the recaptcha.')
 
-        time_by_img('data/img/developer/click_title_page.png')
-        click_fig_center('data/img/developer/click_title_page.png')
+        time_by_img(img_init_page)
+        click_fig_center(img_init_page)
 
-        recaptcha_init = time_by_img('data/img/developer/step_005.png', 3)
+        recaptcha_init = time_by_img(img_activate_recaptcha, 3)
         if recaptcha_init == True:
-            click_fig_center('data/img/developer/step_005.png')
+            click_fig_center(img_activate_recaptcha)
         test_limit_recaptcha()
 
-        dirpath = f'{os.environ.get("PATH_DOWNLOAD")}/audio.mp3'
+        dirpath = f'{path_download}/audio.mp3'
 
         if os.path.exists(dirpath):
             os.remove(dirpath)
 
-        recaptcha_reset = time_by_img(
-            'data/img/developer/reset_recaptcha.png', 1)
+        recaptcha_reset = time_by_img(img_reset_recaptcha, 1)
         if recaptcha_reset == True:
-            click_fig_center('data/img/developer/reset_recaptcha.png')
+            click_fig_center(img_reset_recaptcha)
 
-        audio_buttom = time_by_img('data/img/developer/step_006.png', 2)
+        audio_buttom = time_by_img(img_sound, 2)
         if audio_buttom == True:
-            click_fig_center('data/img/developer/step_006.png')
+            click_fig_center(img_sound)
 
-        test_limit_recaptcha()
+        test_limit_recaptcha(img_error_recaptcha)
+
         try:
-            time_by_img('data/img/developer/step_007.png')
-            click_fig_center('data/img/developer/step_007.png')
+            time_by_img(img_download_recaptcha)
+            click_fig_center(img_download_recaptcha)
 
             test_limit_recaptcha()
 
-            time_by_img('data/img/developer/step_008.png')
-            click_fig_left('data/img/developer/step_008.png')
+            time_by_img(img_options_sound)
+            click_fig_left(img_options_sound)
 
-            time_by_img('data/img/developer/step_009.png')
-            click_fig_center('data/img/developer/step_009.png')
+            time_by_img(img_download_sound)
+            click_fig_center(img_download_sound)
 
-            time_by_img('data/img/developer/step_010.png')
-            click_fig_left('data/img/developer/step_010.png')
+            time_by_img(img_close_sound)
+            click_fig_left(img_close_sound)
 
-            list_step_011 = ['data/img/developer/step_011.png',
-                             'data/img/developer/step_011-1.png']
-            for step_011 in list_step_011:
+            for step_011 in imgs_text_box:
                 try:
                     time_by_img(step_011, 2)
                     click_fig_center(step_011)
@@ -101,27 +115,26 @@ def recaptcha_solver(back_page):
 
             if phrase_regognize != None:
                 human_digite(phrase_regognize)
-                list_step_012 = ['data/img/developer/step_012.png',
-                                 'data/img/developer/step_012-1.png']
-                for step_012 in list_step_012:
+
+                for step_012 in imgs_verify:
                     try:
                         time_by_img(step_012, 2)
                         click_fig_center(step_012)
+
                     except Exception as error:
                         print(f'[ERROR] {step_012} - {error}')
 
             pass_test = time_by_img(
-                'data/img/developer/step_recaptcha_ok.png', 5)
+                img_check,
+                5
+            )
 
         except Exception as error:
             print(f'[ERROR] Error in Recaptcha: {error}')
-            time_by_img(back_page)
-            click_fig_center(back_page)
+            time_by_img(img_back_page)
+            click_fig_center(img_back_page)
 
         if os.path.exists(dirpath):
             os.remove(dirpath)
 
     return pass_test
-
-
-# recaptcha_solver('data/img/developer/step_004.png')
