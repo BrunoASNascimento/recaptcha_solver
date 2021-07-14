@@ -89,12 +89,12 @@ def recaptcha_solver(path_download: str,  img_activate_recaptcha: str,
             time_by_img(img_close_sound)
             click_fig_left(img_close_sound)
 
-            for step_011 in imgs_text_box:
+            for img_text_box in imgs_text_box:
                 try:
-                    time_by_img(step_011, 2)
-                    click_fig_center(step_011)
+                    time_by_img(img_text_box, 2)
+                    click_fig_center(img_text_box)
                 except Exception as error:
-                    print(f'[ERROR] {step_011} - {error}')
+                    print(f'[ERROR] {img_text_box} - {error}')
 
             phrase_regognize = get_text_by_audio(dirpath)
             print(f'[INFO] Recognize: {phrase_regognize}')
@@ -102,13 +102,13 @@ def recaptcha_solver(path_download: str,  img_activate_recaptcha: str,
             if phrase_regognize != None:
                 human_digite(phrase_regognize)
 
-                for step_012 in imgs_verify:
+                for img_verify in imgs_verify:
                     try:
-                        time_by_img(step_012, 2)
-                        click_fig_center(step_012)
+                        time_by_img(img_verify, 2)
+                        click_fig_center(img_verify)
 
                     except Exception as error:
-                        print(f'[ERROR] {step_012} - {error}')
+                        print(f'[ERROR] {img_verify} - {error}')
 
             pass_test = time_by_img(
                 img_check,
