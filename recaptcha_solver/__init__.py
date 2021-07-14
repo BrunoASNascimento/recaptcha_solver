@@ -60,7 +60,7 @@ def test_limit_recaptcha(img_error_recaptcha):
 def recaptcha_solver(path_download: str,  img_activate_recaptcha: str,
                      img_sound: str, img_reset_recaptcha: str, img_download_recaptcha: str, img_error_recaptcha: str,
                      img_options_sound: str, img_download_sound: str, img_close_sound: str, imgs_text_box: list,
-                     imgs_verify: list, img_check: str, img_back_page=None) -> bool:
+                     imgs_verify: list, img_check: str, img_back_page: str = None) -> bool:
 
     pyautogui.moveTo(10, 10)
     pass_test = False
