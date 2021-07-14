@@ -13,7 +13,7 @@ Resolve Recaptcha usando selenium e o pyautogui.
 
 ## Parâmetros:
 
-- **[path_download [string]](img/path_download.png)**: Local de download padrão do navegador.
+- **path_download [string]**: Local de download padrão do navegador.
 - **[img_activate_recaptcha [string]](img/img_activate_recaptcha.png)**: Caminho da imagem que ativa a tela do Recaptcha.
 - **[img_sound [string]](img/img_sound.png)**: Caminho da imagem que ativa a tela de som do Recaptcha.
 - **[img_reset_recaptcha [string]](img/img_reset_recaptcha.png)**: Caminho da imagem que faz o reset do Recaptcha.
