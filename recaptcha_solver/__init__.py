@@ -5,8 +5,8 @@ from .click_img import click_fig_left, click_fig_center
 import pydub
 import speech_recognition as sr
 
-from dotenv import find_dotenv, load_dotenv
-load_dotenv(find_dotenv())
+
+__all__ = ['recaptcha_solver']
 
 
 def get_text_by_audio(dirpath):
@@ -27,9 +27,6 @@ def get_text_by_audio(dirpath):
     return phrase_regognize
 
 
-# print(get_text_by_audio(r'C:\Users\bruno\Downloads\audio (3).mp3'))
-
-
 def test_limit_recaptcha(img_error_recaptcha):
     test_error = False
     while test_error == True:
@@ -41,26 +38,10 @@ def test_limit_recaptcha(img_error_recaptcha):
             break
 
 
-# img_init_page = ''
-# img_activate_recaptcha = 'data\img\step_005.png'
-# img_sound = 'data\img\step_006.png'
-# img_reset_recaptcha = 'data\img\reset_recaptcha.png'
-# img_download_recaptcha = 'data\img\step_007.png'
-# img_error_recaptcha = 'data\img\step_recaptcha_erro.png'
-# img_options_sound=img_options_sound
-# img_download_sound=img_download_sound
-# img_close_sound=img_close_sound
-# imgs_text_box=['data/img/developer/step_011.png',
-#  'data/img/developer/step_011-1.png']
-# imgs_verify = ['data/img/developer/step_012.png',
-            # 'data/img/developer/step_012-1.png']
-# img_check = 'data/img/developer/step_recaptcha_ok.png'
-
-
 def recaptcha_solver(path_download: str,  img_activate_recaptcha: str,
                      img_sound: str, img_reset_recaptcha: str, img_download_recaptcha: str, img_error_recaptcha: str,
                      img_options_sound: str, img_download_sound: str, img_close_sound: str, imgs_text_box: list,
-                     imgs_verify: list, img_check: str, img_back_page=None) -> bool:
+                     imgs_verify: list, img_check: str, img_back_page: str = None) -> bool:
 
     pyautogui.moveTo(10, 10)
     pass_test = False
