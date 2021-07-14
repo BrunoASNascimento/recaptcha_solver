@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import os
+import getpass
+
 from recaptcha_solver import recaptcha_solver
 
 
@@ -19,21 +20,21 @@ driver = webdriver.Chrome(
 
 driver.get('https://www.google.com/recaptcha/api2/demo')
 
-path_download = "C:/Users/bruno/Downloads"
+path_download = f"C:/Users/{getpass.getuser()}/Downloads"
 
-img_activate_recaptcha = 'D:/developer/github.com/projects/recaptcha_solver/data/img/step_005.png'
-img_sound = 'D:/developer/github.com/projects/recaptcha_solver/data/img/step_006.png'
-img_reset_recaptcha = 'D:/developer/github.com/projects/recaptcha_solver/data/img/reset_recaptcha.png'
-img_download_recaptcha = 'D:/developer/github.com/projects/recaptcha_solver/data/img/step_007.png'
-img_error_recaptcha = 'D:/developer/github.com/projects/recaptcha_solver/data/img/step_recaptcha_erro.png'
-img_options_sound = 'D:/developer/github.com/projects/recaptcha_solver/data/img/step_008.png'
-img_download_sound = 'D:/developer/github.com/projects/recaptcha_solver/data/img/step_009.png'
-img_close_sound = 'D:/developer/github.com/projects/recaptcha_solver/data/img/step_010.png'
-imgs_text_box = ['D:/developer/github.com/projects/recaptcha_solver/data/img/step_011.png',
-                 'D:/developer/github.com/projects/recaptcha_solver/data/img/step_011-1.png']
-imgs_verify = ['D:/developer/github.com/projects/recaptcha_solver/data/img/step_012.png',
-               'D:/developer/github.com/projects/recaptcha_solver/data/img/step_012-1.png']
-img_check = 'D:/developer/github.com/projects/recaptcha_solver/data/img/step_recaptcha_ok.png'
+img_activate_recaptcha = 'img/img_activate_recaptcha.png'
+img_sound = 'img/img_sound.png'
+img_reset_recaptcha = 'img/img_reset_recaptcha.png'
+img_download_recaptcha = 'img/img_download_recaptcha.png'
+img_error_recaptcha = 'img/img_error_recaptcha.png'
+img_options_sound = 'img/img_options_sound.png'
+img_download_sound = 'img/img_download_sound.png'
+img_close_sound = 'img/img_close_sound.png'
+imgs_text_box = ['img/imgs_text_box_001.png',
+                 'img/imgs_text_box_002.png']
+imgs_verify = ['img/imgs_verify_001.png',
+               'img/imgs_verify_002.png']
+img_check = 'img/img_check.png'
 
 recaptcha_solver(
     path_download,
