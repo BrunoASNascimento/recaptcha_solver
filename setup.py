@@ -1,30 +1,31 @@
 from setuptools import setup
 
-with open("README.md", 'r') as fh:
-    long_description = fh.read()
+with open("README.md", 'r', encoding='utf-8') as file:
+    long_description = file.read()
 
 setup(
-    name='log_kbots',
-    version='0.0.3',
+    name='recaptcha_solver',
+    version='0.0.1',
     author='Bruno Nascimento',
     author_email='bruno_freddy@hotmail.com',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    packages=['log_kbots'],
-    url='https://github.com/kbots-dga-kroton/log_kbots',
+    packages=['recaptcha_solver', 'recaptcha_solver/click_img',
+              'recaptcha_solver/human_style'],
+    url='https://github.com/BrunoASNascimento/recaptcha_solver',
     project_urls={
-        'Código fonte': 'https://github.com/kbots-dga-kroton/log_kbots',
-        'Download': 'https://github.com/kbots-dga-kroton/log_kbots/archive/main.zip'
+        'Código fonte': 'https://github.com/BrunoASNascimento/recaptcha_solver',
+        'Download': 'https://github.com/BrunoASNascimento/recaptcha_solver/archive/refs/heads/main.zip'
     },
-    license='MIT',
-    keywords=['log_kbots', 'kbots', 'kroton'],
+    license='GPL',
+    keywords=['recaptcha_solver', 'recaptcha'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Natural Language :: Portuguese (Brazilian)',
         'Operating System :: OS Independent',
         'Topic :: Software Development :: Internationalization'
     ],
-    python_requires='>=3.6'
+    python_requires='>=3.8'
 )

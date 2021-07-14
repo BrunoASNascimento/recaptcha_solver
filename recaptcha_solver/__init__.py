@@ -1,7 +1,7 @@
 import os
 import pyautogui
-from human_style import human_digite, time_by_img
-from click_img import click_fig_left, click_fig_center
+from .human_style import human_digite, time_by_img
+from .click_img import click_fig_left, click_fig_center
 import pydub
 import speech_recognition as sr
 
@@ -57,21 +57,26 @@ def test_limit_recaptcha(img_error_recaptcha):
 # img_check = 'data/img/developer/step_recaptcha_ok.png'
 
 
-def recaptcha_solver(img_back_page, path_download, img_init_page, img_activate_recaptcha, img_sound, img_reset_recaptcha, img_download_recaptcha, img_error_recaptcha, img_options_sound, img_download_sound, img_close_sound, imgs_text_box, imgs_verify, img_check):
+def recaptcha_solver(path_download: str,  img_activate_recaptcha: str,
+                     img_sound: str, img_reset_recaptcha: str, img_download_recaptcha: str, img_error_recaptcha: str,
+                     img_options_sound: str, img_download_sound: str, img_close_sound: str, imgs_text_box: list,
+                     imgs_verify: list, img_check: str, img_back_page=None) -> bool:
+
     pyautogui.moveTo(10, 10)
     pass_test = False
     control = 0
-    while (pass_test == False) and (control <= 10):
+
+    while (pass_test == False) and (control <= 5):
         control += 1
         print('[INFO] Try to break the recaptcha.')
 
-        time_by_img(img_init_page)
-        click_fig_center(img_init_page)
+        # time_by_img(img_init_page)
+        # click_fig_center(img_init_page)
 
         recaptcha_init = time_by_img(img_activate_recaptcha, 3)
         if recaptcha_init == True:
             click_fig_center(img_activate_recaptcha)
-        test_limit_recaptcha()
+        test_limit_recaptcha(img_error_recaptcha)
 
         dirpath = f'{path_download}/audio.mp3'
 
@@ -92,7 +97,7 @@ def recaptcha_solver(img_back_page, path_download, img_init_page, img_activate_r
             time_by_img(img_download_recaptcha)
             click_fig_center(img_download_recaptcha)
 
-            test_limit_recaptcha()
+            test_limit_recaptcha(img_error_recaptcha)
 
             time_by_img(img_options_sound)
             click_fig_left(img_options_sound)
@@ -131,8 +136,9 @@ def recaptcha_solver(img_back_page, path_download, img_init_page, img_activate_r
 
         except Exception as error:
             print(f'[ERROR] Error in Recaptcha: {error}')
-            time_by_img(img_back_page)
-            click_fig_center(img_back_page)
+            if img_back_page != None:
+                time_by_img(img_back_page)
+                click_fig_center(img_back_page)
 
         if os.path.exists(dirpath):
             os.remove(dirpath)
