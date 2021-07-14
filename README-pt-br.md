@@ -3,7 +3,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub](https://img.shields.io/github/license/BrunoASNascimento/recaptcha_solver)](LICENSE)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/BrunoASNascimento/recaptcha_solver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/BrunoASNascimento/recaptcha_solver/context:python)
-![PyPI](https://img.shields.io/pypi/v/recaptcha-solver)
+[![PyPI](https://img.shields.io/pypi/v/recaptcha-solver)](https://pypi.org/project/recaptcha-solver/)
 
 Resolve Recaptcha usando selenium e o pyautogui.
 
