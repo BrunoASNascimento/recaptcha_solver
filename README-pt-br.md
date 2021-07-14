@@ -3,6 +3,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub](https://img.shields.io/github/license/BrunoASNascimento/recaptcha_solver)](LICENSE)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/BrunoASNascimento/recaptcha_solver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/BrunoASNascimento/recaptcha_solver/context:python)
+![PyPI](https://img.shields.io/pypi/v/recaptcha-solver)
 
 Resolve Recaptcha usando selenium e o pyautogui.
 
@@ -26,6 +27,10 @@ Resolve Recaptcha usando selenium e o pyautogui.
 - **[img_check [string]](img/img_check.png)**: Caminho da imagem com o OK do Recaptcha.
 - **[img_back_page [string] (default=None)](img/img_back_page.png)**: Caminho da imagem para entrar novamente na página que contém o Recaptcha.
 
+## Retorno:
+
+Boll, caso `True` o Recaptcha foi quebrado com sucesso, caso `False`, o Recaptcha **NÃO** foi quebrado.
+
 ## Como usar:
 
 - ### Google chrome debug:
@@ -38,19 +43,19 @@ Resolve Recaptcha usando selenium e o pyautogui.
 
   É necessário passar alguns parâmetro no selenium para o correto funcionamento dele, os comandos são:
 
-   ```
-        chrome_options.add_experimental_option(
-            'debuggerAddress',
-            'localhost:8989'
-        )
-        chrome_options.add_argument('--ignore-certificate-errors')
-        chrome_options.add_argument("--start-maximized")
-        chrome_options.add_argument('--ignore-ssl-errors')
-    ```
+  ```
+       chrome_options.add_experimental_option(
+           'debuggerAddress',
+           'localhost:8989'
+       )
+       chrome_options.add_argument('--ignore-certificate-errors')
+       chrome_options.add_argument("--start-maximized")
+       chrome_options.add_argument('--ignore-ssl-errors')
+  ```
 
 ### Código de apoio:
 
-   Para um maior compreendimento de como utilizar a biblioteca, é possível ver o código [`test.py`](test.py), onde ocorre a quebra do Recaptcha no site [recaptcha/api2/demo](https://www.google.com/recaptcha/api2/demo).
+Para um maior compreendimento de como utilizar a biblioteca, é possível ver o código [`test.py`](test.py), onde ocorre a quebra do Recaptcha no site [recaptcha/api2/demo](https://www.google.com/recaptcha/api2/demo).
 
 ## Desinstalar:
 
