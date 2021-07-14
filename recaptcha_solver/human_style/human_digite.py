@@ -2,6 +2,8 @@ import random
 import pyautogui
 import time
 
+__all__ = ['human_digite']
+
 
 def human_digite(str_value):
     for letter_user in str_value:

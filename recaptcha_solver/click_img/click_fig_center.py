@@ -1,5 +1,7 @@
 import pyautogui
 
+__all__ = ['click_fig_center']
+
 
 def click_fig_center(img_name, confidence=0.9):
     print(f'[INFO] Read image: {img_name}')
