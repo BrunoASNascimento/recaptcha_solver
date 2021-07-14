@@ -5,7 +5,7 @@ with open("README.md", 'r', encoding='utf-8') as file:
 
 setup(
     name='recaptcha_solver',
-    version='0.0.1',
+    version='1.0.0',
     author='Bruno Nascimento',
     author_email='bruno_freddy@hotmail.com',
     long_description=long_description,
