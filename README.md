@@ -3,7 +3,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub](https://img.shields.io/github/license/BrunoASNascimento/recaptcha_solver)](LICENSE)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/BrunoASNascimento/recaptcha_solver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/BrunoASNascimento/recaptcha_solver/context:python)
-![PyPI](https://img.shields.io/pypi/v/recaptcha-solver)
+[![PyPI](https://img.shields.io/pypi/v/recaptcha-solver)](https://pypi.org/project/recaptcha-solver/)
 
 Resolve Recaptcha usando selenium e o pyautogui.
 
@@ -13,7 +13,7 @@ Resolve Recaptcha usando selenium e o pyautogui.
 
 ## Parâmetros:
 
-- **[path_download [string]](img/path_download.png)**: Local de download padrão do navegador.
+- **path_download [string]**: Local de download padrão do navegador.
 - **[img_activate_recaptcha [string]](img/img_activate_recaptcha.png)**: Caminho da imagem que ativa a tela do Recaptcha.
 - **[img_sound [string]](img/img_sound.png)**: Caminho da imagem que ativa a tela de som do Recaptcha.
 - **[img_reset_recaptcha [string]](img/img_reset_recaptcha.png)**: Caminho da imagem que faz o reset do Recaptcha.
