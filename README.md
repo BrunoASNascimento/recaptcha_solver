@@ -1,9 +1,10 @@
 # Recaptcha solver
 
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-[![GitHub](https://img.shields.io/github/license/BrunoASNascimento/recaptcha_solver)](LICENSE)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/BrunoASNascimento/recaptcha_solver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/BrunoASNascimento/recaptcha_solver/context:python)
-[![PyPI](https://img.shields.io/pypi/v/recaptcha-solver)](https://pypi.org/project/recaptcha-solver/)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=flat-square)](https://www.python.org/)
+[![GitHub](https://img.shields.io/github/license/BrunoASNascimento/recaptcha_solver?style=flat-square)](LICENSE)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/BrunoASNascimento/recaptcha_solver.svg?logo=lgtm&logoWidth=18&style=flat-square)](https://lgtm.com/projects/g/BrunoASNascimento/recaptcha_solver/context:python)
+[![PyPI](https://img.shields.io/pypi/v/recaptcha-solver?style=flat-square)](https://pypi.org/project/recaptcha-solver/)
+[![wakatime](https://wakatime.com/badge/github/BrunoASNascimento/recaptcha_solver.svg?style=flat-square)](https://wakatime.com/badge/github/BrunoASNascimento/recaptcha_solver)
 
 Resolve Recaptcha usando selenium e o pyautogui.
 
@@ -26,6 +27,7 @@ Resolve Recaptcha usando selenium e o pyautogui.
 - **[imgs_verify [list]](img/imgs_verify_001.png)**: Caminho da imagem do botão para verificação do Recaptcha.
 - **[img_check [string]](img/img_check.png)**: Caminho da imagem com o OK do Recaptcha.
 - **[img_back_page [string] (default=None)](img/img_back_page.png)**: Caminho da imagem para entrar novamente na página que contém o Recaptcha.
+- **number_try [int] (default=None)**: Numero de tentativas, por padrão é 5.
 
 ## Retorno:
 
