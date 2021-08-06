@@ -27,6 +27,7 @@ Resolve Recaptcha usando selenium e o pyautogui.
 - **[imgs_verify [list]](img/imgs_verify_001.png)**: Caminho da imagem do botão para verificação do Recaptcha.
 - **[img_check [string]](img/img_check.png)**: Caminho da imagem com o OK do Recaptcha.
 - **[img_back_page [string] (default=None)](img/img_back_page.png)**: Caminho da imagem para entrar novamente na página que contém o Recaptcha.
+- **number_try [int] (default=None)**: Numero de tentativas, por padrão é 5.
 
 ## Retorno:
 
